@@ -1,4 +1,3 @@
-
 # Terraform working files
 .terraform/
 
@@ -23,3 +22,16 @@ override.tf.json
 # Local CLI configuration
 .terraformrc
 terraform.rc
+
+# Plan output files
+*.tfplan
+tfplan
+
+# SSH keys (never commit your key pair)
+*.pem
+*.key
+
+# OS / editor noise
+.DS_Store
+.idea/
+.vscode/

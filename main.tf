@@ -1,5 +1,6 @@
-
 terraform {
+  required_version = ">= 1.5"
+
   required_providers {
     aws = {
       source  = "hashicorp/aws"
@@ -16,13 +17,9 @@ resource "aws_instance" "existing" {
   ami           = "ami-08eb150f611ca277f"
   instance_type = var.instance_type
 
-  subnet_id = "subnet-0c2c47f64dbfa1777"
-
-  vpc_security_group_ids = [
-    "sg-068417e610fa6ad1e"
-  ]
-
-  key_name = "RXB-KEY-PAIR"
+  subnet_id              = var.subnet_id
+  vpc_security_group_ids = var.security_group_ids
+  key_name               = var.key_name
 
   tags = {
     Name = var.instance_name
